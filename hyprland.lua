@@ -279,6 +279,7 @@ hl.device({
 ---------------------
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
+local binDir  = (os.getenv("HOME") or "") .. "/.local/bin/"
 
 -- Example binds, see https://wiki.hypr.land/configuring/core/binds/ for more
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
@@ -293,6 +294,10 @@ hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("qs ipc call bar toggleLauncher"))
 hl.bind("CTRL + SHIFT + S", hl.dsp.exec_cmd("flameshot gui"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
+
+-- Cycle CPU power profile: performance -> balanced -> power-saver -> auto
+-- (auto = performance when plugged in, balanced on battery)
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd(binDir .. "pp cycle"))
 
 -- MY SHLYAPA
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("firefox"))

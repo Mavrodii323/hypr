@@ -31,6 +31,7 @@ My [Hyprland](https://hypr.land/) configuration, written in the Lua config forma
 | `SUPER + B` | Firefox |
 | `SUPER + V` | toggle floating |
 | `SUPER + P` | toggle pseudo-tile |
+| `SUPER + SHIFT + P` | cycle power profile: performance → balanced → power-saver → auto |
 | `SUPER + J` | toggle split (dwindle) |
 | `SUPER + S` | toggle special workspace `magic` |
 | `SUPER + SHIFT + S` | move window to `magic` |
@@ -46,5 +47,7 @@ My [Hyprland](https://hypr.land/) configuration, written in the Lua config forma
 
 - Depends on: `foot`, `dolphin`, `quickshell` (`qs`), `hyprlauncher`, `flameshot`,
   `brightnessctl`, `wpctl` (pipewire), `playerctl`, `hyprshutdown` (optional).
+- `SUPER + SHIFT + P` calls `~/.local/bin/pp cycle`; the automatic
+  AC-aware profile is handled by the user unit `power-profile-auto.service`.
 - Installed at `~/.config/hypr/hyprland.lua`.
 - Reload after edits: `hyprctl reload`. Validate syntax first: `luac -p hyprland.lua`.
