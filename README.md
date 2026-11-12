@@ -26,7 +26,7 @@ My [Hyprland](https://hypr.land/) configuration, written in the Lua config forma
 | `SUPER + C` | close window |
 | `SUPER + M` | exit Hyprland (`hyprshutdown` if installed) |
 | `SUPER + E` | file manager (dolphin) |
-| `SUPER + R` | launcher (hyprlauncher) |
+| `SUPER + R` | launcher (`hyprlauncher`, else `wofi`, else Quickshell bar) |
 | `SUPER + A` | toggle Quickshell app launcher (`qs ipc call bar toggleLauncher`) |
 | `SUPER + B` | Firefox |
 | `SUPER + V` | toggle floating |
@@ -45,8 +45,14 @@ My [Hyprland](https://hypr.land/) configuration, written in the Lua config forma
 
 ## Notes
 
-- Depends on: `foot`, `dolphin`, `quickshell` (`qs`), `hyprlauncher`, `flameshot`,
-  `brightnessctl`, `wpctl` (pipewire), `playerctl`, `hyprshutdown` (optional).
+- Depends on: `foot`, `dolphin`, `quickshell` (`qs`), `flameshot`, `wpctl`
+  (pipewire), `wofi`.
+- Optional: `hyprlauncher` (preferred over `wofi`), `playerctl` (media keys
+  fall back to raw MPRIS), `hyprshutdown`, `brightnessctl` (not needed —
+  brightness uses logind).
+- Local helpers in `~/.local/bin/`: `menu` (launcher fallback), `brightness`
+  (logind backlight control, no root), `player` (media keys), `pp` (power
+  profile).
 - `SUPER + SHIFT + P` calls `~/.local/bin/pp cycle`; the automatic
   AC-aware profile is handled by the user unit `power-profile-auto.service`.
 - Installed at `~/.config/hypr/hyprland.lua`.
