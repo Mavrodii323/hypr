@@ -128,7 +128,7 @@ hl.config({
         inactive_opacity = 1.0,
 
         shadow = {
-            enabled      = true,
+            enabled      = false,
             range        = 2,
             render_power = 2,
             color        = 0xee1a1a1a,
@@ -159,9 +159,9 @@ hl.curve("easy",           { type = "spring", mass = 1, stiffness = 238.1191, da
 
 hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
 hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
--- speed is the duration in DECISECONDS: 1.5 = 150ms (was 4.79/4.1 = ~480/410ms)
-hl.animation({ leaf = "windows",       enabled = true,  speed = 2,    bezier = "quick" })
-hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 1.5,  bezier = "quick",        style = "popin 95%" })
+-- speed is the duration in DECISECONDS: 1 = 100ms. "fade" is cheaper than popin.
+hl.animation({ leaf = "windows",       enabled = true,  speed = 1.5,  bezier = "quick" })
+hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 1,    bezier = "quick",        style = "fade" })
 hl.animation({ leaf = "windowsOut",    enabled = true,  speed = 1.49, bezier = "linear",       style = "popin 87%" })
 hl.animation({ leaf = "fadeIn",        enabled = true,  speed = 1.73, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeOut",       enabled = true,  speed = 1.46, bezier = "almostLinear" })
